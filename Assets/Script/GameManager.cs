@@ -55,9 +55,9 @@ public class GameManager : MonoBehaviour
         {
             if (choosenStickerID == randomSticker.GetComponent<Sticker>().GetID())
             {
+                ObjectChecker.instance.PlayEffect(randomSticker.transform.position);
                 StickerManager.instance.RemoveSticker(randomSticker);
                 Destroy(randomSticker);
-
                 if (StickerManager.instance.GetNumberOfStickers() <= 0)
                 {
                     Win();
